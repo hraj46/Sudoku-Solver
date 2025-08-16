@@ -1,5 +1,5 @@
 # 📌 Sudoku Solver
-This project is a C++ based Sudoku Solver that uses backtracking to solve a standard 9×9 Sudoku puzzle. The program provides an interactive interface for the user to input the Sudoku puzzle and then applies recursive backtracking to compute the solution.
+This project is a **C++ based Sudoku Solver** that uses **backtracking** to solve a standard 9×9 Sudoku puzzle. The program provides an interactive interface for the user to input the Sudoku puzzle and then applies recursive backtracking to compute the solution.
 
 ---
 
@@ -19,61 +19,52 @@ This project is a C++ based Sudoku Solver that uses backtracking to solve a stan
   - Each 3×3 sub-grid must contain unique values.
 - Input values are checked for correctness (0–9 range).
 
-Backtracking Algorithm
+### 4.Backtracking Algorithm
+- Uses recursion to try possible values for empty cells.
+- If a chosen number violates Sudoku rules, it backtracks and tries another value.
+- This continues until the grid is completely solved or no solution is possible.
 
-Uses recursion to try possible values for empty cells.
+### 5.Statistics
+- Tracks how many times the recursive singleCellSolve() function is called.
+- Displays recursion count after solving, giving insight into computational effort.
 
-If a chosen number violates Sudoku rules, it backtracks and tries another value.
+### 6.User Feedback
+- Prints intermediate messages like “Calculating possibilities...” and “Backtracking across puzzle...”.
+- Informs whether the puzzle has been solved or if it has no valid solution.
 
-This continues until the grid is completely solved or no solution is possible.
+---
 
-Statistics
+## ⚙️ Core Components
+- ```SudokuGrid``` **Class**
+  - Manages the Sudoku grid (input, storage, display, set/get cell values).
+  - Provides options to input from console or file.
+  - Handles formatting of the Sudoku board for better visualization.
+- ```SudokuSolver``` **Class**
+  - Implements the backtracking algorithm.
+  - Contains methods for validating rows, columns, and 3×3 sub-grids.
+  - Checks whether the grid is completely solved.
+  - Calls recursive solving function until solution is found.
 
-Tracks how many times the recursive singleCellSolve() function is called.
+---
 
-Displays recursion count after solving, giving insight into computational effort.
+## 🚀 Working Flow
+**1. Menu Prompt** → User selects input method (manual/file).
 
-User Feedback
+**2. Input Puzzle** → Sudoku grid is filled into memory.
 
-Prints intermediate messages like “Calculating possibilities...” and “Backtracking across puzzle...”.
+**3. Initial Display** → Shows the unsolved Sudoku grid.
 
-Informs whether the puzzle has been solved or if it has no valid solution.
+**4. Solve Process** → Recursive backtracking algorithm tries all valid possibilities.
 
-⚙️ Core Components
-SudokuGrid Class
+**5. Final Display** → Prints the solved Sudoku grid (if solvable).
 
-Manages the Sudoku grid (input, storage, display, set/get cell values).
+**6. Statistics** → Shows number of recursive calls used in solving.
 
-Provides options to input from console or file.
+---
 
-Handles formatting of the Sudoku board for better visualization.
-
-SudokuSolver Class
-
-Implements the backtracking algorithm.
-
-Contains methods for validating rows, columns, and 3×3 sub-grids.
-
-Checks whether the grid is completely solved.
-
-Calls recursive solving function until solution is found.
-
-🚀 Working Flow
-Menu Prompt → User selects input method (manual/file).
-
-Input Puzzle → Sudoku grid is filled into memory.
-
-Initial Display → Shows the unsolved Sudoku grid.
-
-Solve Process → Recursive backtracking algorithm tries all valid possibilities.
-
-Final Display → Prints the solved Sudoku grid (if solvable).
-
-Statistics → Shows number of recursive calls used in solving.
-
-📂 Example File Input
-A text file (puzzle.txt) with values:
-
+## 📂 Example File Input
+A text file (```puzzle.txt```) with values:
+```
 5 3 0 0 7 0 0 0 0
 6 0 0 1 9 5 0 0 0
 0 9 8 0 0 0 0 6 0
@@ -83,9 +74,13 @@ A text file (puzzle.txt) with values:
 0 6 0 0 0 0 2 8 0
 0 0 0 4 1 9 0 0 5
 0 0 0 0 8 0 0 7 9
-Empty spaces are represented by 0.
+```
+Empty spaces are represented by ```0```.
 
-📊 Example Output
+---
+
+## 📊 Example Output
+```
 ++=====================================++
 || 5  3     ||     7     ||             ||
 ++-----------++-----------++-----------++
@@ -105,15 +100,17 @@ Empty spaces are represented by 0.
 ++-----------++-----------++-----------++
 ||           ||     8     ||     7  9    ||
 ++=====================================++
+```
 After solving, the complete Sudoku grid is displayed.
 
-📌 Key Learning Outcomes
-Understanding backtracking and recursion in problem solving.
+---
 
-Implementing input validation and structured user interaction.
+## 📌 Key Learning Outcomes
+- Understanding **backtracking and recursion** in problem solving.
+- Implementing **input validation** and structured user interaction.
+- Applying **object-oriented programming (OOP)** concepts in C++.
+- Visual representation of a grid-based puzzle.
 
-Applying object-oriented programming (OOP) concepts in C++.
+---
 
-Visual representation of a grid-based puzzle.
-
-👉 This project demonstrates how backtracking algorithms can be applied to real-world puzzles like Sudoku, and also emphasizes clean code structure, OOP practices, and user-friendly interaction.
+👉 This project demonstrates how **backtracking algorithms** can be applied to real-world puzzles like Sudoku, and also emphasizes **clean code structure**, **OOP practices**, and **user-friendly interaction**.
