@@ -12,17 +12,12 @@ This project is a C++ based Sudoku Solver that uses backtracking to solve a stan
 - The Sudoku grid is stored internally as a 9x9 integer array.
 - Values are displayed in a formatted grid with clear separators for 3×3 sub-grids.
 
-Validation Checks
-
-Ensures that numbers follow Sudoku rules:
-
-Each row must contain unique values (1–9).
-
-Each column must contain unique values.
-
-Each 3×3 sub-grid must contain unique values.
-
-Input values are checked for correctness (0–9 range).
+### 3.Validation Checks
+- Ensures that numbers follow Sudoku rules:
+  - Each row must contain unique values (1–9).
+  - Each column must contain unique values.
+  - Each 3×3 sub-grid must contain unique values.
+- Input values are checked for correctness (0–9 range).
 
 Backtracking Algorithm
 
