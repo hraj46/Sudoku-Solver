@@ -263,7 +263,12 @@ class SudokuSolver{
 	}
 
 
-	
+	private:bool singleCellSolve(){
+
+		statsIncrement();
+
+		if(gridSolved())
+			return true;
 
       
 
